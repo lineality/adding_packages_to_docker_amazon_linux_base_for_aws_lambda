@@ -3,7 +3,10 @@
 
 
 
+
 # Overview
+#### Context: docker-container for AWS lambda function using default base image
+
 You can add packages to your default amazon-linux base, but you need to add a few lines of code before you do. To understand conceptually: the default amazon-linux is not connected to any repositories, so if you try to run "yum install XYZ" you will get a message saying that no packages were available. 
 
 As usual, there is zero explanation of this anywhere online (that I could find over hours of searching and trying options) and the AWS documentation is atrocious. 
