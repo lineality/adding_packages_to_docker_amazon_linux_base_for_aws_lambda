@@ -31,8 +31,10 @@ $ sudo yum -y update; pip install --upgrade pip; mkdir app; cd app; touch app.py
 
 
 ## Requirements.txt
+```
 pytesseract
 Pillow
+```
 
 ## App.py
 ```
