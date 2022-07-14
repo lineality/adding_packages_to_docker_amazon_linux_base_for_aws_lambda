@@ -16,9 +16,10 @@ This example uses a pytesseract installed into the default amazon-linux which is
 
 # Overall Notes:
 1. use yum -y install (to avoid getting yes-no questions during install processes)
-2. activate repos (not included in default base)
+2. don't try to use 'sudo'
+2. activate linux package repositories (not included in default base)
 3. install dev tools including gcc (not included in default base) 
-4. you need a bigger cloud9
+4. you need a bigger cloud9 than the default small one
 
 
 # Proper name for cloud9 (name, project, timestamp)
