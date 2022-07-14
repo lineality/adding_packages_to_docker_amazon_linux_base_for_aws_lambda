@@ -11,7 +11,7 @@ As usual, there is zero explanation of this anywhere online (that I could find o
 This example uses a pytesseract installed into the default amazon-linux which is redhat linux and uses the "yum" package manager (similar to fedora's dnf).
 
 # Steps 
-with Sample Code
+sample code included
 
 ## Overall Notes:
 1. use yum -y install (to avoid getting yes-no questions during install processes)
@@ -109,3 +109,35 @@ $ curl -XPOST "http://localhost:9000/2015-03-31/functions/function/invocations" 
 
 ## Output should be...what you expect from the app.py file you used. 
 E.g. "Hello, World."
+
+
+
+
+
+
+
+??? https://pypi.org/project/tesserocr/
+
+will we need to find the file int he docker image?
+https://stackoverflow.com/questions/50951955/pytesseract-tesseractnotfound-error-tesseract-is-not-installed-or-its-not-i 
+
+maybe try this alternate install method?
+https://www.linux.com/training-tutorials/using-tesseract-ubuntu/ 
+
+Sources & References: 
+
+https://stackabuse.com/pytesseract-simple-python-optical-character-recognition/ 
+https://yum-info.contradodigital.com/view-package/epel/tesseract-devel/
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/compile-software.html 
+https://www.systranbox.com/how-to-install-gcc-in-linux-using-yum/ 
+https://techoverflow.net/2021/05/12/how-to-use-yum-in-dockerfile-correctly/  -y
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/add-repositories.html 
+$ yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+
+Fedora
+sudo dnf install tesseract-devel
+pip install tesserocr
+
+Redhat
+yum -y install tesseract-devel
+pip3 install tesserocr
