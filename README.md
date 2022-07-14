@@ -11,7 +11,7 @@ You can add packages to your default amazon-linux base, but you need to add a fe
 
 As usual, there is zero explanation of this anywhere online (that I could find over hours of searching and trying options) and the AWS documentation is atrocious. 
 
-This example uses a pytesseract install in aws redhat linux using "yum" package manager.
+This example uses a pytesseract installed into the default amazon-linux which is redhat linux and uses the "yum" package manager (similar to fedora's dnf).
 
 
 # Overall Notes:
