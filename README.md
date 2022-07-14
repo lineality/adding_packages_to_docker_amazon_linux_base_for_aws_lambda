@@ -1,8 +1,5 @@
+
 ## adding_packages_to_docker_amazon_linux_base_for_aws_lambda
-
-
-
-
 
 # Overview
 #### Context: docker-container for AWS lambda function using default base image
@@ -13,8 +10,10 @@ As usual, there is zero explanation of this anywhere online (that I could find o
 
 This example uses a pytesseract installed into the default amazon-linux which is redhat linux and uses the "yum" package manager (similar to fedora's dnf).
 
+# Steps 
+with Sample Code
 
-# Overall Notes:
+## Overall Notes:
 1. use yum -y install (to avoid getting yes-no questions during install processes)
 2. don't try to use 'sudo'
 2. activate linux package repositories (not included in default base)
@@ -22,27 +21,31 @@ This example uses a pytesseract installed into the default amazon-linux which is
 4. you need a bigger cloud9 than the default small one
 
 
-# Proper name for cloud9 (name, project, timestamp)
+## Proper name for cloud9
+gga_alt_base_test_2022_07_13_
 YOURNAME_alt_base_test_2022_07_13_1717
 
 
-# First Setup Bash Script
+## First Setup Bash Script
 $ sudo yum -y update; pip install --upgrade pip; mkdir app; cd app; touch app.py; touch Dockerfile; touch requirements.txt
 
 
-# Requirements.txt
+## Requirements.txt
 pytesseract
 Pillow
 
-# App.py
+## App.py
+```
 from PIL import Image
 import pytesseract
 
 def handler(event, context): 
     return 'Hello, World! pytesseract'
+```
 
 
-# Dockerfile
+## Dockerfile
+```
 FROM public.ecr.aws/lambda/python:3.8
 
 # Update pip
@@ -81,24 +84,28 @@ RUN rm -rf /var/cache/yum
 
 # Set the CMD to your handler 
 CMD [ "app.handler" ] 
+```
 
 
 
-# Build your Docker image
+## Build your Docker image
+```
 docker build -t abc .
+```
 
 
-# Run your Docker container
+## Run your Docker container
 ```
 $ docker run -p 9000:8080 abc:latest
 ```
 
 Open a NEW second terminal (here called "terminal_2")
 
-# check docker with 'curl' (look for status:200)
+## check docker with 'curl' (look for status:200)
 - In the NEW terminal, terminal_2, run this code:
 ```
 $ curl -XPOST "http://localhost:9000/2015-03-31/functions/function/invocations" -d '{}'
+```
 
-#### Output should be...what you expect from the app.py file you used. 
+## Output should be...what you expect from the app.py file you used. 
 E.g. "Hello, World."
