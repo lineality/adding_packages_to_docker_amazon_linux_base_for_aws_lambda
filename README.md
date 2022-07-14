@@ -125,8 +125,14 @@ E.g. "Hello, World."
 - https://yum-info.contradodigital.com/view-package/epel/tesseract-devel/
 - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/compile-software.html 
 - https://www.systranbox.com/how-to-install-gcc-in-linux-using-yum/ 
-- https://techoverflow.net/2021/05/12/how-to-use-yum-in-dockerfile-correctly/  -y
+- https://techoverflow.net/2021/05/12/how-to-use-yum-in-dockerfile-correctly/  
+```
+-y
+```
 - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/add-repositories.html 
+```
 $ yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+```
+
 
 
