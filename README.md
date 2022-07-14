@@ -21,7 +21,7 @@ sample code included
 4. you need a bigger cloud9 than the default small one
 
 
-## Proper name for cloud9
+## Proper name for cloud9 instance (author, project, timestamp)
 ```
 YOURNAME_alt_base_test_2022_07_13_1717
 ```
