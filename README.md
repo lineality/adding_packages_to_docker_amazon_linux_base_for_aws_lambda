@@ -10,6 +10,8 @@ As usual, there is just zero explanation of this anywhere online (that I could f
 
 This example uses a pytesseract installed (into the linux-os, not just a python package install with pip) into the default amazon-linux which is redhat linux (according to terminal output) and uses the "yum" package manager (similar to Fedora Linux's dnf package manager).
 
+The act of just running the import lines in the python app.py file (the lambda-handler) tests to see if the packages were installed and able to be loaded. It is a good idea to run this step before trying to do later steps as part of debugging one step at a time.
+
 # Steps 
 sample code included
 
@@ -102,45 +104,29 @@ docker build -t abc .
 $ docker run -p 9000:8080 abc:latest
 ```
 
-Open a NEW second terminal (here called "terminal_2")
-
-## check docker with 'curl' (look for status:200)
-- In the NEW terminal, terminal_2, run this code:
+## Check docker with 'curl'
+1. Open a NEW second terminal (here called "terminal_2")
+2. In the NEW terminal, terminal_2, run this code:
 ```
 $ curl -XPOST "http://localhost:9000/2015-03-31/functions/function/invocations" -d '{}'
 ```
 
 ## Output should be...what you expect from the app.py file you used. 
+```
 E.g. "Hello, World."
+```
 
 
 
 
+# Sources & References: 
 
-
-
-??? https://pypi.org/project/tesserocr/
-
-will we need to find the file int he docker image?
-https://stackoverflow.com/questions/50951955/pytesseract-tesseractnotfound-error-tesseract-is-not-installed-or-its-not-i 
-
-maybe try this alternate install method?
-https://www.linux.com/training-tutorials/using-tesseract-ubuntu/ 
-
-Sources & References: 
-
-https://stackabuse.com/pytesseract-simple-python-optical-character-recognition/ 
-https://yum-info.contradodigital.com/view-package/epel/tesseract-devel/
-https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/compile-software.html 
-https://www.systranbox.com/how-to-install-gcc-in-linux-using-yum/ 
-https://techoverflow.net/2021/05/12/how-to-use-yum-in-dockerfile-correctly/  -y
-https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/add-repositories.html 
+- https://stackabuse.com/pytesseract-simple-python-optical-character-recognition/ 
+- https://yum-info.contradodigital.com/view-package/epel/tesseract-devel/
+- https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/compile-software.html 
+- https://www.systranbox.com/how-to-install-gcc-in-linux-using-yum/ 
+- https://techoverflow.net/2021/05/12/how-to-use-yum-in-dockerfile-correctly/  -y
+- https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/add-repositories.html 
 $ yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 
-Fedora
-sudo dnf install tesseract-devel
-pip install tesserocr
 
-Redhat
-yum -y install tesseract-devel
-pip3 install tesserocr
