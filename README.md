@@ -22,13 +22,14 @@ sample code included
 
 
 ## Proper name for cloud9
-gga_alt_base_test_2022_07_13_
+```
 YOURNAME_alt_base_test_2022_07_13_1717
-
+```
 
 ## First Setup Bash Script
+```
 $ sudo yum -y update; pip install --upgrade pip; mkdir app; cd app; touch app.py; touch Dockerfile; touch requirements.txt
-
+```
 
 ## Requirements.txt
 ```
